@@ -1,8 +1,8 @@
 package com.poc.spring.data.redis.repo;
 
 import com.poc.spring.data.redis.config.RedisConfig;
+import com.poc.spring.data.redis.model.Product;
 import com.poc.spring.data.redis.model.Student;
-import com.poc.spring.data.redis.repo.Product;
 import com.poc.spring.data.redis.repo.ProductCountTracker;
 import com.poc.spring.data.redis.repo.StudentRepository;
 

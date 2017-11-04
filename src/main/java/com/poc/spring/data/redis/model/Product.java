@@ -1,4 +1,4 @@
-package com.poc.spring.data.redis.repo;
+package com.poc.spring.data.redis.model;
 
 public class Product {
 

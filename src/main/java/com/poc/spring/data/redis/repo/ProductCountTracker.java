@@ -11,6 +11,8 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Repository;
 
+import com.poc.spring.data.redis.model.Product;
+
 @Repository
 public class ProductCountTracker {
 
