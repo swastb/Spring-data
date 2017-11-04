@@ -1,4 +1,4 @@
-package com.baeldung.spring.data.redis.queue;
+package com.poc.spring.data.redis.queue;
 
 import org.springframework.data.redis.connection.Message;
 import org.springframework.data.redis.connection.MessageListener;

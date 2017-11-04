@@ -1,4 +1,4 @@
-package com.baeldung.spring.data.redis.queue;
+package com.poc.spring.data.redis.queue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

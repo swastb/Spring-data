@@ -1,10 +1,15 @@
-package com.baeldung.spring.data.redis.repo;
+package com.poc.spring.data.redis.repo;
 
-import com.baeldung.spring.data.redis.config.RedisConfig;
-import com.baeldung.spring.data.redis.model.Student;
+import com.poc.spring.data.redis.config.RedisConfig;
+import com.poc.spring.data.redis.model.Student;
+import com.poc.spring.data.redis.repo.Product;
+import com.poc.spring.data.redis.repo.ProductCountTracker;
+import com.poc.spring.data.redis.repo.StudentRepository;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -19,8 +24,26 @@ public class StudentRepositoryIntegrationTest {
 
     @Autowired
     private StudentRepository studentRepository;
+    
+    @Autowired ProductCountTracker productCountTracker;
 
-    @Test
+    @Test()
+    //@Rollback(false)
+    public void whenUsingProductTracker() throws Exception {
+        final Product product = new Product();        
+        productCountTracker.updateTotalProductCountWithLong(product);
+    }
+    
+    @Test()
+    //@Rollback(false)
+    public void whenUsingProductTrackerWithHash() throws Exception {
+        final Product product = new Product();        
+        productCountTracker.updateTotalProductCountWithHash(product);
+    }
+    
+    
+    @Test()
+    @Rollback(false)
     public void whenSavingStudent_thenAvailableOnRetrieval() throws Exception {
         final Student student = new Student("Eng2015001", "John Doe", Student.Gender.MALE, 1);
         studentRepository.saveStudent(student);

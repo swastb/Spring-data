@@ -1,8 +1,8 @@
-package com.baeldung.spring.data.redis.repo;
-
-import com.baeldung.spring.data.redis.model.Student;
+package com.poc.spring.data.redis.repo;
 
 import java.util.Map;
+
+import com.poc.spring.data.redis.model.Student;
 
 public interface StudentRepository {
 

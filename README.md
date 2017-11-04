@@ -1,8 +1,5 @@
 ## Spring Data Redis
 
-### Relevant Articles:
-- [Introduction to Spring Data Redis](http://www.baeldung.com/spring-data-redis-tutorial)
-- [PubSub Messaging with Spring Data Redis](http://www.baeldung.com/spring-data-redis-pub-sub)
 
 ### Build the Project with Tests Running
 ```
@@ -13,4 +10,18 @@ mvn clean install
 ```
 mvn test
 ```
+To Test whether the values got saved in Redis, use the below commands in Redis CLI
+
+
+This returns all the keys saved ( mainly for product with long)
+> keys *
+
+To get the values of product-counts
+>GET "product-counts:0"
+
+To get the keys when data is saved as hash data
+> hkeys "products:attrs:0"
+
+To get the values use
+> hget "products:attrs:0" name
 
