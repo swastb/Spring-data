@@ -2,6 +2,8 @@ package com.poc.spring.data.redis.model;
 
 import java.io.Serializable;
 
+import org.springframework.data.redis.core.TimeToLive;
+
 public class Student implements Serializable {
 
     public enum Gender {
@@ -12,6 +14,9 @@ public class Student implements Serializable {
     private String name;
     private Gender gender;
     private int grade;
+    
+    @TimeToLive
+	private Long expiration;
 
     public Student(String id, String name, Gender gender, int grade) {
         this.id = id;
@@ -52,8 +57,20 @@ public class Student implements Serializable {
         this.grade = grade;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", gender=" + gender + ", grade=" + grade + '}';
-    }
+        
+    public Long getExpiration() {
+		return expiration;
+	}
+
+	public void setExpiration(Long expiration) {
+		this.expiration = expiration;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", gender=" + gender + ", grade=" + grade + ", expiration="
+				+ expiration + "]";
+	}
+
+	
 }

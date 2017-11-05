@@ -16,7 +16,7 @@ import com.poc.spring.data.redis.queue.RedisMessagePublisher;
 import com.poc.spring.data.redis.queue.RedisMessageSubscriber;
 
 @Configuration
-@ComponentScan("com.baeldung.spring.data.redis")
+@ComponentScan("com.poc.spring.data.redis")
 public class RedisConfig {
 
 	private static final StringRedisSerializer STRING_SERIALIZER = new StringRedisSerializer();
