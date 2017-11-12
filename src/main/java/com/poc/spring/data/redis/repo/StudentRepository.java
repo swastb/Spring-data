@@ -1,5 +1,6 @@
 package com.poc.spring.data.redis.repo;
 
+import java.util.List;
 import java.util.Map;
 
 import com.poc.spring.data.redis.model.Student;
@@ -15,4 +16,6 @@ public interface StudentRepository {
     Map<Object, Object> findAllStudents();
 
     void deleteStudent(String id);
+    
+    List<Student> findAllStudentsFromDatabase();
 }
